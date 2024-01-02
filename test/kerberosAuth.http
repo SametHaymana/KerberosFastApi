@@ -1,0 +1,35 @@
+POST http://0.0.0.0:8000/kerberos/getTGT HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "123",
+    "serverId": 1
+}
+
+###
+
+POST http://0.0.0.0:8000/kerberos/getTGS HTTP/1.1
+Content-Type: application/json
+
+{
+    "serverId": 1,
+    "tgt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInNlcnZlcl9pZCI6MSwiaWF0IjoxNzAzNDE4MTcwLCJleHAiOjE3MDM0MTg0NzB9.tzcVjkKNMHb0whvLvILO8ACpRG_fdgDJPPFuh1pJuqQ"
+
+}
+
+
+
+
+
+###
+
+POST   http://0.0.0.0:8000/kerberos/updateServerSecret HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInNlcnZlcl9pZCI6MSwiaWF0IjoxNzAzNDE4MTc5LCJleHAiOjE3MDM0MjcxNzl9.Vn4nsjYrSREXXQj2p7pVE6boPcEnVAKBmMlrP3JvSE8
+Content-Type: application/json
+
+{
+    "newSecret": "DENEME",
+    "serverId": 1
+
+}
